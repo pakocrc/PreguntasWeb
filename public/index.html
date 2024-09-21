@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Let's talk about aliens 👽</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/languagePicker.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="language-picker js-language-picker" data-trigger-class="li4-btn li4-btn--subtle js-tab-focus">
+            <form action="" class="language-picker__form">
+                <label for="language-picker-select">Select your language</label>
+
+                <select name="language-picker-select" id="language-picker-select">
+                    <option lang="en" value="english" selected>English</option>
+                    <option lang="es" value="spanish">Español</option>
+                    <option lang="fr" value="francais">Français</option>
+                    <option lang="de" value="deutsch">Deutsch</option>
+                    <!-- <option lang="it" value="italiano">Italiano</option> -->
+                </select>
+            </form>
+        </div>
+    </header>
+    <section class="questionsSection">
+        <div>
+            <h1 class="ml6">
+                <span class="text-wrapper">
+                    <span id="questionTextSpan" class="letters"></span>
+                </span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="buttonsSection">
+        <div>
+            <button class="nextQuestionButton" id="nextQuestionButton" role="button" onClick="getQuestions()"></button>
+        </div>
+
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/languagePicker.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+    "author": "Francisco Córdoba",
+    "bugs": {
+        "url": "https://github.com/pakocrc/PreguntasWeb/issues"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "latest-version": "^9.0.0"
+    },
+    "description": "Preguntas Web App",
+    "homepage": "https://github.com/pakocrc/PreguntasWeb#readme",
+    "license": "ISC",
+    "main": "index.js",
+    "name": "preguntasweb",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pakocrc/PreguntasWeb.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "version": "1.0.0"
+}
