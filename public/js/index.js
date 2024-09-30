@@ -4,12 +4,8 @@ nextQuestionButton.innerText = "Start Game!"
 var questions = [];
 var language = "english"
 
-
-console.log(document.getElementById("language-picker-select").value)
-
-document.getElementById("language-picker-select").onkeyup = function () {
-    print("Language changed")
-    console.log(document.getElementById("language-picker-select").value)
+function changeLanguage(language) {
+    console.log(language.lang)
 }
 
 function randomIntFromInterval(min, max) { // min and max included 
@@ -23,16 +19,16 @@ function selectNextQuestion() {
     var language = document.getElementById("language-picker-select").value
  
     switch (language) {
-        case "english":
+        case "en":
             handleNextQuestion(questions[randonQuestionItem].en)
             break;
-        case "spanish":
+        case "es":
             handleNextQuestion(questions[randonQuestionItem].es)
             break;
-        case "francais":
+        case "fr":
             handleNextQuestion(questions[randonQuestionItem].fr)
             break;
-        case "deutsch":
+        case "de":
             handleNextQuestion(questions[randonQuestionItem].de)
             break;
         default:
