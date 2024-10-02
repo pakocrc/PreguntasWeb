@@ -106,12 +106,12 @@ html {
     box-sizing: border-box
 }
 
-body {
+/* body {
     background-color: #fff;
     background-color: var(--color-bg, white)
-}
+} */
 
-article,
+/* article,
 aside,
 details,
 figcaption,
@@ -125,7 +125,7 @@ section,
 main,
 form legend {
     display: block
-}
+} */
 
 ol,
 ul {
@@ -148,7 +148,7 @@ select {
 .form-control,
 .link,
 .reset {
-    background-color: transparent;
+    background-color: white;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -2376,11 +2376,12 @@ u {
 }
 
 .language-picker {
-    display: inline-block;
-    position: relative
+    display: block;
+    position: relative;
+    float: right;
 }
 
-.js .language-picker__form {
+.language-picker__div .language-picker__form {
     display: none
 }
 
@@ -2525,6 +2526,14 @@ u {
 
 .language-picker__flag--italiano::before {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA0OCA0OCc+PHBhdGggZmlsbD0nIzAwOTM0NScgZD0nTTE2LDQySDJjLTEuMTA1LDAtMi0wLjg5NS0yLTJWOGMwLTEuMTA1LDAuODk1LTIsMi0yaDE0VjQyeicvPjxwYXRoIGZpbGw9JyNDRjJCMzYnIGQ9J000OCw0MGMwLDEuMTA1LTAuODk1LDItMiwySDMyVjZoMTRjMS4xMDUsMCwyLDAuODk1LDIsMlY0MHonLz48cmVjdCB4PScxNicgeT0nNicgZmlsbD0nI0U2RTZFNicgd2lkdGg9JzE2JyBoZWlnaHQ9JzM2Jy8+PC9zdmc+)
+}
+
+.language-picker__flag--spanish::before {
+    background-image: url(../images/flags/spanish_flag.png)
+}
+
+.language-picker__flag--portugues::before {
+    background-image: url(../images/flags/brazil_flag.png)
 }
 
 .language-picker--hide-label .language-picker__button .icon {

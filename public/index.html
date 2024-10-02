@@ -12,16 +12,17 @@
 
 <body>
     <header>
-        <div class="js">
+        <div class="language-picker__div">
             <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
             <form action="" class="language-picker__form" id="language-picker_form">
               <label for="language-picker-select">Select your language</label>
-              <select name="language-picker-select" id="language-picker-select" onchange="changeLanguage()">
-                <option lang="de" value="deutsch">Deutsch</option>
+              <select name="language-picker-select" id="language-picker-select">
+                <!-- <option lang="de" value="deutsch">Deutsch</option> -->
                 <option lang="en" value="english" selected>English</option>
                 <option lang="es" value="spanish">Español</option>
-                <option lang="fr" value="francais">Français</option>
+                <!-- <option lang="fr" value="francais">Français</option> -->
                 <!-- <option lang="it" value="italiano">Italiano</option> -->
+                <option lang="pt" value="portugues">Português</option>
               </select>
             </form>
           </div></div>
@@ -38,14 +39,14 @@
 
     <section class="buttonsSection">
         <div>
-            <button class="nextQuestionButton" id="nextQuestionButton" role="button" onClick="getQuestions()"></button>
+            <button class="nextQuestionButton" id="nextQuestionButton" role="button" onclick="selectNextQuestion()">Start Game!</button>
         </div>
 
     </section>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/languagePicker.js"></script>
 </body>
 
