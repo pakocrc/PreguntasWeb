@@ -1,3 +1,15 @@
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    /* width: 100%; */
+}
+
+html {
+    box-sizing: border-box;
+    background-color: black;
+} 
+
 .ml6 {
     position: relative;
     font-weight: 900;
@@ -6,33 +18,52 @@
 
 .ml6 .text-wrapper {
     position: relative;
-    display: inline-block;
-    /* padding-top: 0.2em;
+    display: block;
+    padding-top: 0.2em;
     padding-right: 0.05em;
-    padding-bottom: 0.1em; */
+    padding-bottom: 0.1em; 
     overflow: hidden;
 }
 
 .ml6 .letter {
     display: inline-block;
     line-height: 1em;
-    color: white
+    color: white;
+    word-wrap: normal;
 }
 
 .questionsSection {
-    background-color: #051937;
+    background-color: clear;
     padding-top: 100px;
     padding-bottom: 50px;
     padding-left: 100px;
     padding-right: 100px;
     text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80%;
+    min-height: 50%;
+    width: 100%;
+    min-width: 50%;
+    white-space: normal;
 }
 
 .buttonsSection {
-    background-color: #051937;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+    background-color: clear;    
+    padding-left: 25%;
+    padding-right: 25%;
     text-align: center;
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 15%;
+    min-height: 15%;
+    width: 100%;
+    min-width: 50%;
+    white-space: normal;
 }

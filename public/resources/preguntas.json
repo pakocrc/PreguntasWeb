@@ -1,0 +1,208 @@
+{
+    "categories": [
+        "FRIENDS",
+        "LIFE",
+        "DIRTY"
+    ],
+    "questions": [{
+            "id": "1",
+            "category": "LIFE",
+            "es": "¿Cuál crees que sea el propósito de tu vida?",
+            "en": "What do you think is the purpose of your life?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "2",
+            "category": "LIFE",
+            "es": "¿Cuál es tu sueño más grande en este momento?",
+            "en": "What is your biggest dream?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "3",
+            "category": "FRIENDS",
+            "es": "¿Te falta algo o alguien para ser feliz?",
+            "en": "Do you need someone or something to be happy?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "4",
+            "category": "FRIENDS",
+            "es": "¿Qué es algo que la gente supone de ti al conócerte pero no es cierto?",
+            "en": "What something pople think about you when they meet you but is not true?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "5",
+            "category": "FRIENDS",
+            "es": "¿Algo que la gente desconozca totalmente de ti pero que sabes que eres o tiendes a ser así?",
+            "en": "What is something that people doesn't know about you but you know you totally are?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "6",
+            "category": "LIFE",
+            "es": "¿Qué tiene mucho significado para ti en este momento?",
+            "en": "Mention something meaningful to you",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "7",
+            "category": "FRIENDS",
+            "es": "Menciona algo que significó mucho para ti pero ahora no significa nada",
+            "en": "Mention something that meant a lot to you but means nothing today",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "8",
+            "category": "FRIENDS",
+            "es": "¿Qué es lo primero que tiendes a notar en alguien?",
+            "en": "What is the first thing you see in someone?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "9",
+            "category": "FRIENDS",
+            "es": "¿Perros o gatos?",
+            "en": "Dogs or Cats?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "10",
+            "category": "LIFE",
+            "es": "¿Cuál es tú miedo más grande?",
+            "en": "What is your biggest fear?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "11",
+            "category": "FRIENDS",
+            "es": "¿Cuál es tú película favorita?",
+            "en": "What is your favorite movie?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "12",
+            "category": "FRIENDS",
+            "es": "¿Qué es lo que más te gusta y lo que más te disgusta de tu familia?",
+            "en": "What is the best and the worst thing about your family?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "13",
+            "category": "FRIENDS",
+            "es": "¿Hay algo de tu personalidad que te gustaría cambiar o mejorar?",
+            "en": "What is something you want to change in yourself or your personality?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "14",
+            "category": "LIFE",
+            "es": "¿Eres feliz? Y, ¿cúal es la razón?",
+            "en": "Are you happy? What's the reason?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "15",
+            "category": "FRIENDS",
+            "es": "Menciona alguna curiosidad sobre ti",
+            "en": "Mention something curious about yourself",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "16",
+            "category": "LIFE",
+            "es": "¿Cuál etapa de tu vida recuerdas con felicidad?",
+            "en": "What moment or period of your life do you remember with joy?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "17",
+            "category": "FRIENDS",
+            "es": "Menciona algún recuerdo de cuando eras niño o niña",
+            "en": "Mention a memory when you were a child",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "18",
+            "category": "LIFE",
+            "es": "¿Que te motiva actualmente?",
+            "en": "What motivates you today?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "19",
+            "category": "FRIENDS",
+            "es": "¿Que tipo de arte de gusta o practicas más?",
+            "en": "What kind of art do you like or practice more?",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        },
+        {
+            "id": "20",
+            "category": "FRIENDS",
+            "es": "Menciona algún hobby secreto del que nadie o pocos sepan",
+            "en": "Mention a hobby of yours that no one knows about",
+            "pt": "",
+            "fr": "",
+            "de": "",
+            "author": ""
+        }
+    ]
+}

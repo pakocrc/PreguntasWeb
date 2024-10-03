@@ -19,13 +19,14 @@ const ErrorMessages = Object.freeze({
 let currentQuestion = { id: "", category: "", es: "", en: "", pt: "", fr: "", de: "", author: "" };
 let questions = [];
 let userLanguage = Languages.en;
+let gameStarted = false;
 
 getQuestions()
 setupGame()
 
 function setupGame() {
     questionTextSpan.innerText = "Let's talk about aliens..."
-    handleButton("Loading questions...", true)
+    handleButton("Loading questions... ⏱️", true)
     handleAnimation()
 }
 
@@ -35,7 +36,10 @@ function getQuestions() {
         selectNextQuestion()
 
     } else {
-        const request = new Request("https://sfge2zkyh3.execute-api.us-east-1.amazonaws.com/PreguntasFunc", {
+        // const request = new Request("https://sfge2zkyh3.execute-api.us-east-1.amazonaws.com/PreguntasFunc", {
+        //     method: "GET"
+        // });
+        const request = new Request("../resources/preguntas.json", {
             method: "GET"
         });
 
@@ -48,9 +52,9 @@ function getQuestions() {
                 }
             })
             .then((response) => {
-                // console.log("response: ", response)
+                console.log("response: ", response)
                 questions = response.questions
-                handleButton("Play Game 😉", false)
+                handleButton("Start Game! 🚀", false)
             })
             .catch((error) => {
                 console.error(error);
@@ -88,9 +92,37 @@ function changeLanguage(language) {
             break;
     }
 
+    changeNextButtonText()
+
     // console.log(userLanguage)
     if (currentQuestion.id != "") {
         changeQuestion(currentQuestion)
+    }
+}
+
+function changeNextButtonText() {
+    switch (userLanguage) {
+        case Languages.en:
+            nextQuestionButton.innerText = gameStarted ? "Next Question 🎲" : "Start Game! 🚀"
+            break;
+        case Languages.es:
+            nextQuestionButton.innerText = gameStarted ? "Siguiente Pregunta 🎲" : "¡Iniciar Juego! 🚀"
+            break;
+        case Languages.fr:
+            nextQuestionButton.innerText = gameStarted ? "Question suivante 🎲" : "Lancer le jeu! 🚀"
+            break;
+        case Languages.de:
+            nextQuestionButton.innerText = gameStarted ? "Naechste Frage 🎲" : "Starte das Spiel! 🚀"
+            break;
+        case Languages.pt:
+            nextQuestionButton.innerText = gameStarted ? "Proxima Pergunta 🎲" : "Iniciar o jogo! 🚀"
+            break;
+        case Languages.it:
+            nextQuestionButton.innerText = gameStarted ? "Domanda successiva 🎲" : "Inizia il gioco! 🚀"
+            break;
+        default:
+            nextQuestionButton.innerText = gameStarted ? "Next Question 🎲" : "Start Game! 🚀"
+            break;
     }
 }
 
@@ -127,7 +159,8 @@ function selectNextQuestion() {
         return
     }
 
-    nextQuestionButton.innerText = "Next Question";
+    gameStarted = true;
+    changeNextButtonText()
 
     let randonQuestionItem = randomIntFromInterval(1, questions.length);
     currentQuestion = questions[randonQuestionItem]
