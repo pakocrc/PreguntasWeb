@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/languagePicker.css">
+    <link rel="stylesheet" href="styles/shareButtonStyle.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -14,13 +15,22 @@
 
     <div class="questionsSection">
         <h1 class="ml6">
-            <span class="text-wrapper">
+            <span class="text-wrapper" >
                 <span id="questionTextSpan" class="letters"></span>
             </span>
         </h1>
     </div>
     
     <div class="buttonsSection">
+    
+
+        <div class="tooltip">
+            <button class="shareButton" id="shareButton" onclick="shareButtonPressed()" hidden="true">
+                <span class="tooltiptext" id="myTooltip"></span>
+                <img src="./images/share_icon.png" alt="sharepng" />
+            </button>
+        </div>
+
         <button class="nextQuestionButton" id="nextQuestionButton" role="button" onclick="selectNextQuestion()">Start Game! 🎲 </button>
 
         <div class="language-picker__div">

@@ -26,8 +26,9 @@ setupGame()
 
 function setupGame() {
     questionTextSpan.innerText = "Let's talk about aliens..."
-    handleButton("Loading questions... ⏱️", true)
+    handleNextButton("Loading questions... ⏱️", true)
     handleAnimation()
+    setupTooltip()
 }
 
 function getQuestions() {
@@ -54,7 +55,7 @@ function getQuestions() {
             .then((response) => {
                 console.log("response: ", response)
                 questions = response.questions
-                handleButton("Start Game! 🚀", false)
+                handleNextButton("Start Game! 🚀", false)
             })
             .catch((error) => {
                 console.error(error);
@@ -62,7 +63,7 @@ function getQuestions() {
     }
 }
 
-function handleButton(title, disabled) {
+function handleNextButton(title, disabled) {
     nextQuestionButton.innerText = title
     nextQuestionButton.disabled = disabled
 }
@@ -160,7 +161,9 @@ function selectNextQuestion() {
     }
 
     gameStarted = true;
+    document.getElementById("shareButton").hidden = false
     changeNextButtonText()
+    setupTooltip()
 
     let randonQuestionItem = randomIntFromInterval(1, questions.length);
     currentQuestion = questions[randonQuestionItem]
@@ -217,4 +220,78 @@ function handleAnimation() {
             easing: "easeOutExpo",
             delay: 10000000000
         });
+}
+
+function shareButtonPressed() {
+    var copiedText = questionTextSpan.innerText
+
+    navigator.clipboard.writeText(copiedText);
+
+    displayTooltipMessage();
+}
+
+function setupTooltip() {
+    var tooltip = document.getElementById("myTooltip");
+    // tooltip.hidePopover
+
+    switch (userLanguage) {
+        case Languages.en:
+            tooltip.innerHTML = "Copy to Clipboard"
+            break;
+        case Languages.es:
+            tooltip.innerHTML = "Copiar al Portapapeles"
+            break;
+        case Languages.fr:
+            tooltip.innerHTML = "Copier dans le presse-papier"
+            break;
+        case Languages.de:
+            tooltip.innerHTML = "Kopieren zum Einfuhrzeichen"
+            break;
+        case Languages.it:
+            tooltip.innerHTML = "Copia in Clipboard"
+            break;
+        case Languages.pt:
+            tooltip.innerHTML = "Copiar para o Clipboard"
+            break;
+        default:
+            tooltip.innerHTML = "Copy to Clipboard"
+            break;
+    }
+}
+
+function displayTooltipMessage() {
+    var tooltip = document.getElementById("myTooltip");
+
+    switch (userLanguage) {
+        case Languages.en:
+            tooltip.innerHTML = "Copied"
+            break;
+        case Languages.es:
+            tooltip.innerHTML = "Copiado"
+            break;
+        case Languages.fr:
+            tooltip.innerHTML = "Copie"
+            break;
+        case Languages.de:
+            tooltip.innerHTML = "Kopiert"
+            break;
+        case Languages.it:
+            tooltip.innerHTML = "Copia"
+            break;
+        case Languages.pt:
+            tooltip.innerHTML = "Copiado"
+            break;
+        default:
+            tooltip.innerHTML = "Copied"
+            break;
+    }
+
+    setTimeout(function() {
+        tooltip.hidden = true
+    }, 1000)
+
+    setTimeout(function() {
+        tooltip.hidden = false
+        setupTooltip()
+    }, 2000)
 }

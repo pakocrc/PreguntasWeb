@@ -33,7 +33,10 @@ html {
 }
 
 .questionsSection {
-    background-color: clear;
+    background-color: gray; 
+    border: solid;
+    border-color: red;
+    border-width: thick;
     padding-top: 100px;
     padding-bottom: 50px;
     padding-left: 100px;
