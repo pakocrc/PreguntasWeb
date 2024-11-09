@@ -7,51 +7,48 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/languagePicker.css">
-    <link rel="stylesheet" href="styles/shareButtonStyle.css">
+    <link rel="stylesheet" href="styles/shareButtonTooltip.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div class="parent">
+        <div class="language-picker__div">
+            <div class="language-picker js-language-picker" data-trigger-class="btn">
+                <form action="" class="language-picker__form" >
+                    <label for="language-picker-select"></label>
+                    <select name="language-picker-select" id="language-picker-select">
+                        <option lang="en" value="english" selected></option>
+                        <option lang="es" value="spanish"></option>
+                        <option lang="pt" value="portugues"></option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        
+        <div class="questionSection">
+            <h1 class="ml2" id="questionTextSpan"></h1>
+        </div>
 
-    <div class="questionsSection">
-        <h1 class="ml6">
-            <span class="text-wrapper" >
-                <span id="questionTextSpan" class="letters"></span>
-            </span>
-        </h1>
-    </div>
-    
-    <div class="buttonsSection">
-    
-
-        <div class="tooltip">
-            <button class="shareButton" id="shareButton" onclick="shareButtonPressed()" hidden="true">
+        <div class="tooltip" id="tooltip">
+            <button class="shareButton" id="shareButton" onclick="shareButtonPressed()" >
                 <span class="tooltiptext" id="myTooltip"></span>
-                <img src="./images/share_icon.png" alt="sharepng" />
+                <img id="shareButtonImage" src="./images/share_icon.png" alt="sharepng" hidden/>
             </button>
         </div>
-
-        <button class="nextQuestionButton" id="nextQuestionButton" role="button" onclick="selectNextQuestion()">Start Game! 🎲 </button>
-
-        <div class="language-picker__div">
-            <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
-                <form action="" class="language-picker__form" id="language-picker_form">
-                <label for="language-picker-select">Select your language</label>
-                <select name="language-picker-select" id="language-picker-select">
-                    <!-- <option lang="de" value="deutsch">Deutsch</option> -->
-                    <option lang="en" value="english" selected>English</option>
-                    <option lang="es" value="spanish">Español</option>
-                    <!-- <option lang="fr" value="francais">Français</option> -->
-                    <!-- <option lang="it" value="italiano">Italiano</option> -->
-                    <option lang="pt" value="portugues">Português</option>
-                </select>
-                </form>
-          </div>
+        
+        <div id="counterDiv" class="counterDiv" hidden>
+            <h2 class="questionsCounter" id="questionsCounter" hidden></h2>
         </div>
-        <div>
+        
+        <div class="buttonsSection">
+            <button class="nextQuestionButton" id="nextQuestionButton" role="button" onclick="selectNextQuestion()">Start Game! 🎲 </button>            
+        </div>
+
+        <div class="footer">
             <p>Made with ❤️ by Francisco Córdoba, 2024</p>
         </div>
-    </div>    
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="js/main.js"></script>

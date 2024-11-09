@@ -1,33 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.shareButton {
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-    padding-bottom: 10px;
-}
-
-.shareButton:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-    transform: translateY(-2px);
-}
-
-img {
-    width: 25px;
-    height: 25px;
-}
-
-/* Tooltip */
 .tooltip {
+    background-color: clear;    
+    text-align: center;
+    display: block;
     position: relative;
-    display: inline-block;
-}
+  }
 
-.tooltip .tooltiptext {
+.shareButton .tooltiptext {
     visibility: hidden;
     width: 140px;
     background-color: #555;
@@ -44,7 +22,7 @@ img {
     transition: opacity 0.3s;
 }
 
-.tooltip .tooltiptext::after {
+.shareButton .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -55,7 +33,27 @@ img {
     border-color: #555 transparent transparent transparent;
 }
 
-.tooltip:hover .tooltiptext {
+.shareButton:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+.shareButton {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.shareButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+img {
+    width: 25px;
+    height: 25px;
 }

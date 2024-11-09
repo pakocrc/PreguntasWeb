@@ -2,71 +2,69 @@
 *::after,
 *::before {
     box-sizing: inherit;
-    /* width: 100%; */
 }
 
 html {
-    box-sizing: border-box;
     background-color: black;
-} 
-
-.ml6 {
-    position: relative;
-    font-weight: 900;
-    font-size: 3.3em;
 }
 
-.ml6 .text-wrapper {
+.ml2 {
     position: relative;
-    display: block;
-    padding-top: 0.2em;
-    padding-right: 0.05em;
-    padding-bottom: 0.1em; 
-    overflow: hidden;
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    background-color: clear;
+    height: 100px;
+    padding-bottom: 200px;
 }
 
-.ml6 .letter {
+.ml2 .letter {
+    color: white;
     display: inline-block;
     line-height: 1em;
+}
+
+@media only screen and (max-width: 2000px) {
+    .ml2 {
+        font-weight: 900;
+        font-size: 3.5em;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .ml2 {
+        font-weight: 700;
+        font-size: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ml2 {
+        font-weight: 500;
+        font-size: 1.5em;
+    }
+}
+
+.questionsCounter {
+    background-color: clear;
     color: white;
-    word-wrap: normal;
+    text-align: center;
+    display: block;
+    position: relative;
+    font-size: medium;
 }
 
-.questionsSection {
-    background-color: gray; 
-    border: solid;
-    border-color: red;
-    border-width: thick;
+.footer {
+    position: relative;
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: smaller;
+    background-color: clear;
+    width: 100%;
+    bottom: 0px;
     padding-top: 100px;
-    padding-bottom: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
-    text-align: center;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 80%;
-    min-height: 50%;
-    width: 100%;
-    min-width: 50%;
-    white-space: normal;
-}
-
-.buttonsSection {
-    background-color: clear;    
-    padding-left: 25%;
-    padding-right: 25%;
-    text-align: center;
-    display: block;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    height: 15%;
-    min-height: 15%;
-    width: 100%;
-    min-width: 50%;
-    white-space: normal;
 }

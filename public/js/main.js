@@ -20,6 +20,7 @@ let currentQuestion = { id: "", category: "", es: "", en: "", pt: "", fr: "", de
 let questions = [];
 let userLanguage = Languages.en;
 let gameStarted = false;
+let questionsPresented = 0;
 
 getQuestions()
 setupGame()
@@ -37,12 +38,12 @@ function getQuestions() {
         selectNextQuestion()
 
     } else {
-        // const request = new Request("https://sfge2zkyh3.execute-api.us-east-1.amazonaws.com/PreguntasFunc", {
-        //     method: "GET"
-        // });
-        const request = new Request("../resources/preguntas.json", {
+        const request = new Request("https://sfge2zkyh3.execute-api.us-east-1.amazonaws.com/PreguntasFunc", {
             method: "GET"
         });
+        // const request = new Request("../resources/preguntas.json", {
+        //     method: "GET"
+        // });
 
         fetch(request)
             .then((response) => {
@@ -53,9 +54,11 @@ function getQuestions() {
                 }
             })
             .then((response) => {
-                console.log("response: ", response)
+                // console.log("response: ", response)
                 questions = response.questions
                 handleNextButton("Start Game! 🚀", false)
+                questionsCounter.innerText = "0/" + questions.length
+                counterDiv.hidden = false;
             })
             .catch((error) => {
                 console.error(error);
@@ -95,7 +98,6 @@ function changeLanguage(language) {
 
     changeNextButtonText()
 
-    // console.log(userLanguage)
     if (currentQuestion.id != "") {
         changeQuestion(currentQuestion)
     }
@@ -161,12 +163,19 @@ function selectNextQuestion() {
     }
 
     gameStarted = true;
-    document.getElementById("shareButton").hidden = false
+    shareButtonImage.hidden = false;
+
+    if (questionsPresented < questions.length) {
+        questionsPresented += 1
+        questionsCounter.innerText = questionsPresented + "/" + questions.length
+    }
+    
     changeNextButtonText()
     setupTooltip()
 
     let randonQuestionItem = randomIntFromInterval(1, questions.length);
     currentQuestion = questions[randonQuestionItem]
+
     changeQuestion(currentQuestion)
 }
 
@@ -201,26 +210,50 @@ function changeQuestion(question) {
     handleAnimation()
 }
 
+// function handleAnimation() {
+//     // Wrap every letter in a span
+//     var textWrapper = document.querySelector('.ml6 .letters');
+//     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+//     anime.timeline({ loop: false })
+//         .add({
+//             targets: '.ml6 .letter',
+//             translateY: ["1.1em", 0],
+//             translateZ: 0,
+//             duration: 1000,
+//             delay: (el, i) => 50 * i
+//         }).add({
+//             targets: '.ml6',
+//             opacity: 0,
+//             duration: 10000000000,
+//             easing: "easeOutExpo",
+//             delay: 10000000000
+//         });
+// }
+
 function handleAnimation() {
     // Wrap every letter in a span
-    var textWrapper = document.querySelector('.ml6 .letters');
+    var textWrapper = document.querySelector('.ml2');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-    anime.timeline({ loop: false })
+    anime.timeline({ loop: true })
         .add({
-            targets: '.ml6 .letter',
-            translateY: ["1.1em", 0],
+            targets: '.ml2 .letter',
+            scale: [2, 1],
+            opacity: [0, 1],
             translateZ: 0,
-            duration: 1000,
+            easing: "easeOutExpo",
+            duration: 950,
             delay: (el, i) => 50 * i
         }).add({
-            targets: '.ml6',
+            targets: '.ml2',
             opacity: 0,
             duration: 10000000000,
             easing: "easeOutExpo",
-            delay: 10000000000
+            delay: 1000
         });
 }
+
 
 function shareButtonPressed() {
     var copiedText = questionTextSpan.innerText
@@ -232,7 +265,6 @@ function shareButtonPressed() {
 
 function setupTooltip() {
     var tooltip = document.getElementById("myTooltip");
-    // tooltip.hidePopover
 
     switch (userLanguage) {
         case Languages.en:
