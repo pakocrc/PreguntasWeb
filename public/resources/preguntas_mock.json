@@ -6,6 +6,7 @@
     ],
     "questions": [{
             "id": "1",
+            "ordinal": 1,
             "category": "LIFE",
             "es": "¿Cuál crees que sea el propósito de tu vida?",
             "en": "What do you think is the purpose of your life?",
@@ -16,6 +17,7 @@
         },
         {
             "id": "2",
+            "ordinal": 2,
             "category": "LIFE",
             "es": "¿Cuál es tu sueño más grande en este momento?",
             "en": "What is your biggest dream?",
@@ -26,6 +28,7 @@
         },
         {
             "id": "3",
+            "ordinal": 3,
             "category": "FRIENDS",
             "es": "¿Te falta algo o alguien para ser feliz?",
             "en": "Do you need someone or something to be happy?",
@@ -36,6 +39,7 @@
         },
         {
             "id": "4",
+            "ordinal": 4,
             "category": "FRIENDS",
             "es": "¿Qué es algo que la gente supone de ti al conócerte pero no es cierto?",
             "en": "What something pople think about you when they meet you but is not true?",
@@ -46,6 +50,7 @@
         },
         {
             "id": "5",
+            "ordinal": 5,
             "category": "FRIENDS",
             "es": "¿Algo que la gente desconozca totalmente de ti pero que sabes que eres o tiendes a ser así?",
             "en": "What is something that people doesn't know about you but you know you totally are?",
@@ -56,6 +61,7 @@
         },
         {
             "id": "6",
+            "ordinal": 6,
             "category": "LIFE",
             "es": "¿Qué tiene mucho significado para ti en este momento?",
             "en": "Mention something meaningful to you",
@@ -66,6 +72,7 @@
         },
         {
             "id": "7",
+            "ordinal": 7,
             "category": "FRIENDS",
             "es": "Menciona algo que significó mucho para ti pero ahora no significa nada",
             "en": "Mention something that meant a lot to you but means nothing today",
@@ -76,6 +83,7 @@
         },
         {
             "id": "8",
+            "ordinal": 8,
             "category": "FRIENDS",
             "es": "¿Qué es lo primero que tiendes a notar en alguien?",
             "en": "What is the first thing you see in someone?",
@@ -86,6 +94,7 @@
         },
         {
             "id": "9",
+            "ordinal": 9,
             "category": "FRIENDS",
             "es": "¿Perros o gatos?",
             "en": "Dogs or Cats?",
@@ -96,6 +105,7 @@
         },
         {
             "id": "10",
+            "ordinal": 10,
             "category": "LIFE",
             "es": "¿Cuál es tú miedo más grande?",
             "en": "What is your biggest fear?",
@@ -106,6 +116,7 @@
         },
         {
             "id": "11",
+            "ordinal": 11,
             "category": "FRIENDS",
             "es": "¿Cuál es tú película favorita?",
             "en": "What is your favorite movie?",
@@ -116,6 +127,7 @@
         },
         {
             "id": "12",
+            "ordinal": 12,
             "category": "FRIENDS",
             "es": "¿Qué es lo que más te gusta y lo que más te disgusta de tu familia?",
             "en": "What is the best and the worst thing about your family?",
@@ -126,6 +138,7 @@
         },
         {
             "id": "13",
+            "ordinal": 13,
             "category": "FRIENDS",
             "es": "¿Hay algo de tu personalidad que te gustaría cambiar o mejorar?",
             "en": "What is something you want to change in yourself or your personality?",
@@ -136,6 +149,7 @@
         },
         {
             "id": "14",
+            "ordinal": 14,
             "category": "LIFE",
             "es": "¿Eres feliz? Y, ¿cúal es la razón?",
             "en": "Are you happy? What's the reason?",
@@ -146,6 +160,7 @@
         },
         {
             "id": "15",
+            "ordinal": 15,
             "category": "FRIENDS",
             "es": "Menciona alguna curiosidad sobre ti",
             "en": "Mention something curious about yourself",
@@ -156,6 +171,7 @@
         },
         {
             "id": "16",
+            "ordinal": 16,
             "category": "LIFE",
             "es": "¿Cuál etapa de tu vida recuerdas con felicidad?",
             "en": "What moment or period of your life do you remember with joy?",
@@ -166,6 +182,7 @@
         },
         {
             "id": "17",
+            "ordinal": 17,
             "category": "FRIENDS",
             "es": "Menciona algún recuerdo de cuando eras niño o niña",
             "en": "Mention a memory when you were a child",
@@ -176,6 +193,7 @@
         },
         {
             "id": "18",
+            "ordinal": 18,
             "category": "LIFE",
             "es": "¿Que te motiva actualmente?",
             "en": "What motivates you today?",
@@ -186,6 +204,7 @@
         },
         {
             "id": "19",
+            "ordinal": 19,
             "category": "FRIENDS",
             "es": "¿Que tipo de arte de gusta o practicas más?",
             "en": "What kind of art do you like or practice more?",
@@ -196,6 +215,7 @@
         },
         {
             "id": "20",
+            "ordinal": 20,
             "category": "FRIENDS",
             "es": "Menciona algún hobby secreto del que nadie o pocos sepan",
             "en": "Mention a hobby of yours that no one knows about",

@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(SplitText) 
+  // gsap code here!
+ });
+
 const Languages = Object.freeze({
     en: "english",
     es: "spanish",
@@ -18,32 +23,36 @@ const ErrorMessages = Object.freeze({
 
 let currentQuestion = { id: "", category: "", es: "", en: "", pt: "", fr: "", de: "", author: "" };
 let questions = [];
+let questionsCount = 0
+let questionsAsked = [];
+let questionsAskedCount = 0;
 let userLanguage = Languages.en;
 let gameStarted = false;
-let questionsPresented = 0;
 
 getQuestions()
 setupGame()
 
+nextQuestionButton.onclick = selectNextQuestion
+
 function setupGame() {
     questionTextSpan.innerText = "Let's talk about aliens..."
     handleNextButton("Loading questions... ⏱️", true)
-    handleAnimation()
+    handleGsapAnimation()
     setupTooltip()
 }
 
 function getQuestions() {
-    if (questions.length > 0) {
+    if (questionsCount > 0) {
         // Do not request more questions. Change to a different question
         selectNextQuestion()
 
     } else {
-        const request = new Request("https://sfge2zkyh3.execute-api.us-east-1.amazonaws.com/PreguntasFunc", {
-            method: "GET"
-        });
-        // const request = new Request("../resources/preguntas.json", {
+        // const request = new Request("https://sfge2zkyh3.execute-api.us-east-1.amazonaws.com/PreguntasFunc", {
         //     method: "GET"
         // });
+        const request = new Request("../resources/preguntas_mock.json", {
+            method: "GET"
+        });
 
         fetch(request)
             .then((response) => {
@@ -57,8 +66,9 @@ function getQuestions() {
                 // console.log("response: ", response)
                 questions = response.questions
                 handleNextButton("Start Game! 🚀", false)
-                questionsCounter.innerText = "0/" + questions.length
-                counterDiv.hidden = false;
+                questionsCount = questions.length
+                questionsCounterLabel.innerText = "0/" + questionsCount
+                questionsCounterDiv.hidden = false;
             })
             .catch((error) => {
                 console.error(error);
@@ -156,27 +166,65 @@ function handleErrorMessage() {
     }
 }
 
+function handleGameOver() {
+    nextQuestionButton.disabled = true
+    
+    switch (userLanguage) {
+        case Languages.en:
+            nextQuestionButton.innerText = "Game Over! 🎉"
+            break;
+        case Languages.es:
+            nextQuestionButton.innerText = "¡Fin del Juego! 🎉"
+            break;
+        case Languages.fr:
+            nextQuestionButton.innerText = "Jeu Terminé! 🎉"
+            break;
+        case Languages.de:
+            nextQuestionButton.innerText = "Spiel Vorbei! 🎉"
+            break;
+        case Languages.pt:
+            nextQuestionButton.innerText = "Jogo Terminado! 🎉"
+            break;
+        case Languages.it:
+            nextQuestionButton.innerText = "Gioco Finito! 🎉"
+            break;
+        default:
+            nextQuestionButton.innerText = "Game Over! 🎉"
+            break;
+    }
+}
+
 function selectNextQuestion() {
-    if (questions.length == 0) {
+    if (questionsCount == 0) {
         handleErrorMessage()
         return
     }
 
+    if (questions.length == 0 ) {
+        handleGameOver()
+        return
+    }
+
+    let randonQuestionItem = randomIntFromInterval(0, questions.length - 1);
+    
+    currentQuestion = questions[randonQuestionItem]
+    
+    questionsAsked.push(currentQuestion)
+    
+    questions = questions.filter((element) => element.id != currentQuestion.id)
+
+    changeQuestion(currentQuestion)
+
     gameStarted = true;
     shareButtonImage.hidden = false;
 
-    if (questionsPresented < questions.length) {
-        questionsPresented += 1
-        questionsCounter.innerText = questionsPresented + "/" + questions.length
+    if (questionsAskedCount < questionsCount) {
+        questionsAskedCount += 1
+        questionsCounterLabel.innerText = questionsAskedCount + "/" + questionsCount
     }
     
     changeNextButtonText()
     setupTooltip()
-
-    let randonQuestionItem = randomIntFromInterval(1, questions.length);
-    currentQuestion = questions[randonQuestionItem]
-
-    changeQuestion(currentQuestion)
 }
 
 function changeQuestion(question) {
@@ -207,53 +255,30 @@ function changeQuestion(question) {
     }
 
     questionTextSpan.innerText = questionString
-    handleAnimation()
+    // handleAnimation()
+    handleGsapAnimation()
 }
 
-// function handleAnimation() {
-//     // Wrap every letter in a span
-//     var textWrapper = document.querySelector('.ml6 .letters');
-//     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+function handleGsapAnimation() {
+    gsap.set("h1", { opacity: 1 });
 
-//     anime.timeline({ loop: false })
-//         .add({
-//             targets: '.ml6 .letter',
-//             translateY: ["1.1em", 0],
-//             translateZ: 0,
-//             duration: 1000,
-//             delay: (el, i) => 50 * i
-//         }).add({
-//             targets: '.ml6',
-//             opacity: 0,
-//             duration: 10000000000,
-//             easing: "easeOutExpo",
-//             delay: 10000000000
-//         });
-// }
+    let split = SplitText.create(".questionTextSpan", { 
+        type: "words, chars",
+         mask: "words",
+         linesClass: "line++",
+         autoSplit: true,
+    });
 
-function handleAnimation() {
-    // Wrap every letter in a span
-    var textWrapper = document.querySelector('.ml2');
-    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    let randomXY = randomIntFromInterval(-100, 100)
+    console.log("randomXY: ", randomXY)
 
-    anime.timeline({ loop: true })
-        .add({
-            targets: '.ml2 .letter',
-            scale: [2, 1],
-            opacity: [0, 1],
-            translateZ: 0,
-            easing: "easeOutExpo",
-            duration: 950,
-            delay: (el, i) => 50 * i
-        }).add({
-            targets: '.ml2',
-            opacity: 0,
-            duration: 10000000000,
-            easing: "easeOutExpo",
-            delay: 1000
-        });
+    gsap.from(split.chars, {
+        y: randomXY,
+        x: randomXY,
+        autoAlpha: 0,
+        stagger: 0.05
+    });
 }
-
 
 function shareButtonPressed() {
     var copiedText = questionTextSpan.innerText
@@ -263,6 +288,7 @@ function shareButtonPressed() {
     displayTooltipMessage();
 }
 
+// Tooltip = Share button functionality
 function setupTooltip() {
     var tooltip = document.getElementById("myTooltip");
 

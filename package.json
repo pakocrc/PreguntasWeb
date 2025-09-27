@@ -4,8 +4,10 @@
         "url": "https://github.com/pakocrc/PreguntasWeb/issues"
     },
     "dependencies": {
-        "express": "^4.19.2",
-        "latest-version": "^9.0.0"
+        "express": "^5.1.0",
+        "gsap": "^3.13.0",
+        "latest-version": "^9.0.0",
+        "nodemon": "^3.1.10"
     },
     "description": "Preguntas Web App",
     "homepage": "https://github.com/pakocrc/PreguntasWeb#readme",
