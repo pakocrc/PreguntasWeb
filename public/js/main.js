@@ -32,7 +32,7 @@ function changeLanguage(language) {
 }
 
 // Main Game Functionality
-setTimeout(() => { getQuestions() }, 1500);
+setTimeout(() => { getQuestions() }, 0);
 setupGame()
 
 function setupGame() {

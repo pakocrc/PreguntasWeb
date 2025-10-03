@@ -9,6 +9,7 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     margin: 0;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial
 }
@@ -22,12 +23,12 @@ body {
 }
 
 .container {
-    width: min(1020px, 95%);
+    width: 95%;
+    height: 98%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 28px;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6)
+    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
 }
 
 header {
@@ -37,39 +38,95 @@ header {
     gap: 12px
 }
 
+.questionSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+    background-color: clear;
+}
+
 .questionTextSpan {
-    position: relative;
-    display: block;
     color: white;
     text-align: center;
-    /* padding: 25px; */
-    padding-top: 15%;
-    /* margin-top: 15%; */
-    background-color: blue;
-    /* background-color: clear; */
-    height: 200px;
+    background-color: clear;
+    height: 50%;
+    width: 100%;
 }
 
 .questionsCounterLabel {
-    /* background-color: clear; */
-    background-color: blue;
+    background-color: clear;
     padding: auto;
     color: white;
     text-align: center;
     display: block;
     position: relative;
     font-size: medium;
+    padding: 10px;
 }
 
 footer {
     position: relative;
-    color: white;
+    width: 100%;
     text-align: center;
     display: block;
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 13px;
     background-color: clear;
-    /* background-color: yellow; */
-    width: 100%;
+}
+
+.bottomContainer {
+    background-color: clear;
+    position: sticky;
     bottom: 0px;
-    margin: 50px 0px 0px 0px;
-    padding-top: 10px;
+    width: 100%;
+    /* border: 3px solid #8AC007; */
+}
+
+/* Button styles */
+.buttonsSection {
+  background-color: clear;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+
+.nextQuestionButton {
+  appearance: auto;
+  background-color: #000000;
+  border: 2px dotted #FFFFFF;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: large;
+  line-height: normal;
+  margin: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  width: 100%;
+  will-change: transform;
+}
+
+.nextQuestionButton:disabled {
+  pointer-events: none;
+}
+
+.nextQuestionButton:hover {
+  box-shadow: rgba(252, 251, 251, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.nextQuestionButton:active {
+  box-shadow: none;
+  transform: translateY(0);
 }

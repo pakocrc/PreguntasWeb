@@ -1,7 +1,9 @@
 .lang-select {
     display: flex;
     align-items: center;
-    gap: 8px
+    gap: 8px;
+    font-weight: 600;
+    font-size: 24px
 }
 
 select {
@@ -10,7 +12,9 @@ select {
     color: var(--text);
     padding: 8px 10px;
     border-radius: 8px;
-    font-weight: 600
+    font-weight: 600;
+    font-size: 14px;
+    font-family: inherit;
 }
 
 main {
@@ -48,12 +52,6 @@ button.ghost {
     color: var(--text);
     padding: 10px 14px;
     border-radius: 10px
-}
-
-footer {
-    margin-top: 20px;
-    color: var(--muted);
-    font-size: 13px
 }
 
 /* small responsive tweak */
