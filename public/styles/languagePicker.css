@@ -1,125 +1,68 @@
-ol, ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.btn {
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    text-decoration: none;
-    justify-content: center;
+.lang-select {
+    display: flex;
     align-items: center;
-    background-color: black;
-    border: black;
-    cursor: pointer;
+    gap: 8px
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    padding: 0;
-    border: 0;
-    white-space: nowrap;
-    background-color: clear;
+select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 600
 }
 
-.language-picker {
-    display: block;
-    position: relative;
-    background-color: clear;
+main {
+    margin-top: 22px
 }
 
-.language-picker__div .language-picker__form {
-    display: none;
+h2 {
+    margin: 0 0 8px 0;
+    font-size: 28px
 }
 
-.language-picker__dropdown {
-    z-index: 999;
-    position: fixed;
-    left: 0;
-    top: 0%;
-    width: 50px;
-    background-color: white;
-    padding: 5px;
-    border-radius: .25em;
-    font-size: 1rem;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s .2s, opacity .2s, -webkit-transform .2s ease-out;
-    transition: visibility 0s .2s, opacity .2s, transform .2s ease-out;
-    transition: visibility 0s .2s, opacity .2s, transform .2s ease-out, -webkit-transform .2s ease-out
+p.lead {
+    color: var(--muted);
+    margin: 0 0 18px 0
 }
 
-.language-picker__button[aria-expanded=true]+.language-picker__dropdown {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transform: translateY(4px);
-    -ms-transform: translateY(4px);
-    transform: translateY(4px);
-    transition: opacity .2s, -webkit-transform .2s ease-out;
-    transition: opacity .2s, transform .2s ease-out;
-    transition: opacity .2s, transform .2s ease-out, -webkit-transform .2s ease-out
+.actions {
+    display: flex;
+    gap: 10px
 }
 
-.language-picker__item {
-    text-decoration: none;
-    padding: .5em 2em .5em 1.25em;
-    color: #313135;
+button.primary {
+    background: var(--accent);
+    border: none;
+    color: #042022;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer
 }
 
-.language-picker__item span {
-    white-space: nowrap;
-    overflow: hidden;
-    background-color: clear;
+button.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    padding: 10px 14px;
+    border-radius: 10px
 }
 
-.language-picker__item[aria-selected=true] {
-    position: relative;
-    background-color: #2a6df4;
-    color: #fff;
+footer {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 13px
 }
 
-.language-picker__flag {
-    display: block;
-    align-items: center
-}
+/* small responsive tweak */
+@media (max-width:420px) {
+    h2 {
+        font-size: 20px
+    }
 
-.language-picker__flag::before {
-    display: inline-block;
-    content: '';
-    height: 16px;
-    width: 20px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: clear;
-}
-
-.language-picker__flag--deutsch::before {
-    background-image: url(../images/flags/german_flag.png)
-}
-
-.language-picker__flag--english::before {
-    background-image: url(../images/flags/english_flag.png)
-}
-
-.language-picker__flag--francais::before {
-    background-image: url(../images/flags/french_flag.png)
-}
-
-.language-picker__flag--italiano::before {
-    background-image: url(../images/flags/italian_flag.png)
-}
-
-.language-picker__flag--spanish::before {
-    background-image: url(../images/flags/spanish_flag.png)
-}
-
-.language-picker__flag--portugues::before {
-    background-image: url(../images/flags/brazil_flag.png)
+    .brand h1 {
+        font-size: 16px
+    }
 }

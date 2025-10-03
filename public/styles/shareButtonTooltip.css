@@ -1,8 +1,10 @@
 .tooltip {
-    background-color: clear;    
+    /* background-color: clear;  */
+    background-color: orange;
     text-align: center;
     display: block;
     position: relative;
+    margin-top: 50px;
   }
 
 .shareButton .tooltiptext {

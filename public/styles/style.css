@@ -1,27 +1,59 @@
-*,
-*::after,
-*::before {
-    box-sizing: inherit;
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --accent: #06b6d4;
+    --muted: #94a3b8;
+    --text: #e6eef6
 }
 
-html {
-    background-color: black;
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #071123 0%, #0b1020 100%);
+    color: var(--text)
+}
+
+.container {
+    width: min(1020px, 95%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6)
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px
 }
 
 .questionTextSpan {
     position: relative;
-    display:block;
+    display: block;
     color: white;
     text-align: center;
-    padding: 25px;
-    overflow-wrap: break-word;
-    white-space: normal;
-    background-color: clear;
+    /* padding: 25px; */
+    padding-top: 15%;
+    /* margin-top: 15%; */
+    background-color: blue;
+    /* background-color: clear; */
     height: 200px;
 }
 
 .questionsCounterLabel {
-    background-color: clear;
+    /* background-color: clear; */
+    background-color: blue;
+    padding: auto;
     color: white;
     text-align: center;
     display: block;
@@ -29,14 +61,15 @@ html {
     font-size: medium;
 }
 
-.footer {
+footer {
     position: relative;
     color: white;
     text-align: center;
     display: block;
-    font-size: smaller;
     background-color: clear;
+    /* background-color: yellow; */
     width: 100%;
     bottom: 0px;
-    padding-top: 100px;
+    margin: 50px 0px 0px 0px;
+    padding-top: 10px;
 }

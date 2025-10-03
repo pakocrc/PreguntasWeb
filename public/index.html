@@ -2,60 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <title>Let's talk about aliens 👽</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" href="styles/languagePicker.css">
     <link rel="stylesheet" href="styles/shareButtonTooltip.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
+
 <body>
-    <div class="parent">
-        <div class="language-picker__div">
-            <div class="language-picker js-language-picker" data-trigger-class="btn">
-                <form action="" class="language-picker__form" >
-                    <label for="language-picker-select"></label>
-                    <select name="language-picker-select" id="language-picker-select">
-                        <option lang="en" value="english" selected></option>
-                        <option lang="es" value="spanish"></option>
-                        <option lang="pt" value="portugues"></option>
-                        <option lang="fr" value="francais"></option>
-                        <option lang="it" value="italiano"></option>
-                        <option lang="de" value="deutsch"></option>
-                    </select>
-                </form>
+    <div class="container" role="application">
+        <header>
+            <div class="lang-select" aria-hidden="false">
+                <select id="lang" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="pt">Português</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="de">Deutsch</option>
+                </select>
             </div>
-        </div>
-        
+        </header>
+
         <div class="questionSection">
-             <h1 class="questionTextSpan" id="questionTextSpan"></h1>
+            <h1 class="questionTextSpan" id="questionTextSpan"></h1>
         </div>
 
         <div class="tooltip" id="tooltip">
-            <button class="shareButton" id="shareButton" onclick="shareButtonPressed()" >
-                <span class="tooltiptext" id="myTooltip"></span>
-                <img id="shareButtonImage" src="./images/share_icon.png" alt="sharepng" hidden/>
+            <button class="shareButton" id="shareButton">
+                <span class="tooltiptext" id="myTooltip" data-lang="tooltip"></span>
+                <img id="shareButtonImage" src="./images/share_icon.png" alt="sharepng" />
             </button>
         </div>
-        
+
         <div id="questionsCounterDiv" class="questionsCounterDiv" hidden>
             <h2 class="questionsCounterLabel" id="questionsCounterLabel" hidden></h2>
         </div>
-        
+
         <div class="buttonsSection">
-            <button class="nextQuestionButton" id="nextQuestionButton" role="button">Start Game! 🎲 </button>            
+            <button class="nextQuestionButton" id="nextQuestionButton" role="button" data-lang="primary">
+                Start Game! 🎲 
+            </button>
         </div>
 
-        <div class="footer">
-            <p>Made with ❤️ from 🇨🇷 <br>by Francisco Córdoba, 2025</p>
-        </div>
+        <footer>
+            <p data-lang="footer">Made with ❤️ — 2025</p>
+        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/languagePicker.js"></script>
+    <script  type="module" src="js/main.js"></script>
+    <script type="module" src="js/languagePicker.js"></script>
 </body>
 
 </html>

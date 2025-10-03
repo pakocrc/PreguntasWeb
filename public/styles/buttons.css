@@ -1,5 +1,6 @@
 .buttonsSection {
-  background-color: clear;    
+  /* background-color: clear; */
+  background-color: green;
   padding-left: 15%;
   padding-right: 15%;
   text-align: center;
