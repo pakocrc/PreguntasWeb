@@ -107,6 +107,7 @@ function changeLanguage(language) {
     }
 
     changeNextButtonText()
+    setupTooltip()
 
     if (currentQuestion.id != "") {
         changeQuestion(currentQuestion)
@@ -270,8 +271,6 @@ function handleGsapAnimation() {
     });
 
     let randomXY = randomIntFromInterval(-100, 100)
-    console.log("randomXY: ", randomXY)
-
     gsap.from(split.chars, {
         y: randomXY,
         x: randomXY,
